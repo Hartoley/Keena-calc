@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="list">
+    <button onclick="clickme()" id="toadd">Add</button>
+
+    <div id="members"></div>
+    <h2 id="remove"></h2>
+    <input type="text" id="input">
+    <button onclick="removeName()">Remove</button>
+    <p id="answer" style="border: dashed 2px palevioletred; width: 200px; height: 50px;">Notice</p>
+    <p id="trashed"  style="border: dashed 2px rgb(151, 8, 56); width: 200px; height: 50px;">Trash bin</p>
+
+    <input id="retrieve" type="text">
+    <button onclick="retrieve()">Retrieve</button>
+
+   
+    
+    
+</body>
+</html>
+
+<script>
+   
+    let list=document.getElementById('list')
+    let toadd=document.getElementById('toadd')
+    let members=document.getElementById('members')
+    let length=document.getElementById('remove')
+    let answer=document.getElementById('answer')
+    let input=document.getElementById('input')
+    let input2=document.getElementById('retrieve')
+    let trashed=document.getElementById('trashed')
+    let trash=[]
+    let listarray=[]
+   
+    // let show= members.innerHTML =listarray.join('<br>')
+
+   
+   
+  
+    function clickme(){
+        listarray.push(list.value)
+        show()
+
+        
+        }
+    
+    function show(){
+        members.innerHTML=''
+
+
+        listarray.forEach(function(element, i){
+            members.innerHTML+=`<h1>${element} <button onclick="deleteit(${i})">delete</button> </h1>`
+        })
+
+
+        // for (let index = 0; index < listarray.length; index++) {
+        //     members.innerHTML+=`<h1>${listarray[index]} <button onclick="deleteit(${index})">delete</button> </h1>`
+        
+    
+        // }
+    }
+
+    
+    function removeName(index){
+        for (let index = 0; index < listarray.length; index++){
+            if (listarray[index].toLowerCase()== input.value.toLowerCase()){
+                listarray.splice(index,1)
+                show()
+             
+            }
+             
+        
+    
+        }
+        
+    }
+
+    function deleteit(del){
+            listarray.splice(del)
+            show()
+    }
+
+   
+
+    // function clickme(){
+    //     listarray.push(list.value)
+    //     members.innerHTML =listarray.join('<br>')
+    //     trash.push(input.value)
+        
+      
+        
+    //    }
+
+
+
+
+    // function remove(){
+    //    if(listarray.includes(input.value) == true){
+    //     answer.innerHTML= input.value + ' '+ 'has been deleted'
+
+    //     trash.push(input.value)
+    //     trashed.innerHTML = trash.join('<br>')
+    //     listarray.splice(listarray.indexOf(input.value), 1)
+    //     members.innerHTML= listarray.join('<br>')
+      
+
+    //    }else{
+    //         answer.innerHTML= 'Absent'
+            
+    //     }
+
+    // }
+    // function retrieve(){
+    //     if (trash.includes(input2.value) == true){
+    //         listarray.push(input2.value)
+    //         members.innerHTML= listarray.join('<br/>')
+    //         trash.splice(trash.indexOf(input2.value), 1)
+    //         trashed.innerHTML = trash.join('<br>')
+    //         answer.innerHTML= input2.value + ' '+ 'has been restored'
+            
+    //     }
+    // }
+</script>

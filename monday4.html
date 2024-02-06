@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thursday</title>
+</head>
+<body>
+    <input onkeyup="press()" type="text" id="key">
+    <h2 contenteditable="" id="write">
+    </h2>
+    <!-- <input id="tocheck" type="text"> -->
+    <button onclick="tap()">press</button>
+    <h2 id="yes"></h2>
+   
+</body>
+</html>
+
+<script>
+    let correct=document.getElementById('key')
+    let question=document.getElementById('write')
+    let answer=document.getElementById('yes')
+    
+
+  
+
+    function press(){
+       correct.value= correct.value.replace('sex','gender')
+       correct.value= correct.value.replace('shit','sh**t')
+     
+    }
+
+    function tap(){
+      if(correct.value.toUpperCase().includes('NIGERIA') || correct.value.toUpperCase().includes('BODIJA') || correct.value.toUpperCase().includes('EXPLOSION') )
+      {
+        answer.innerHTML='found'
+      }
+      else {
+        answer.innerHTML='not found'
+      }
+    }
+
+</script>

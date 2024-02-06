@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" id="color" onchange="change()">
+    <h1 id="display">Hello world</h1>
+
+    <input type="password" id="password">
+    <span onclick="eye()" id="eye">show</span>
+
+    <textarea oninput="countnumber()" name="" id="type" cols="30" rows="10" ></textarea>
+    <p id="showme" style="background-color: darkviolet; width: 70px; height: 20px; border: solid 0.5px red;"></p>
+</body>
+</html>
+
+<script>
+
+    let count=document.getElementById ('type')
+    let showme=document.getElementById('showme')
+    function countnumber(){
+        showme.innerHTML=count.value.length +' ' + 'of 50' 
+
+        count.value.maxlength= '< 50' 
+        if(count.value.length == 50){
+           count.value= count.value.slice(0,-1)
+        }
+    }
+
+
+
+
+function change(){
+ let input=document.getElementById('color')
+ let text=document.getElementById('display')
+
+
+ text.style.color=input.value
+}
+
+function eye(){
+    let password=document.getElementById('password')
+    let eye=document.getElementById('eye')
+    
+
+    if ( password.type=='text'){
+        password.type= 'password'
+        eye.innerHTML='show'
+    } else {
+        password.type= 'text'
+        eye.innerHTML='hide'
+    }
+}
+
+
+let array=['mango', 'cashew', 'apple', 'berry']
+
+array.push('orange')
+console.log(array)
+
+array.unshift('orange')
+console.log(array)
+
+array.shift()
+console.log(array)
+
+array.pop()
+console.log(array)
+
+array.splice(1,1)
+console.log(array)
+
+array.indexOf(0)
+console.log(array)
+
+array.includes('mango')
+console.log(array)
+
+array.lastIndexOf()
+console.log(array)
+
+array.toString()
+console.log(array)
+
+array.join('---')
+
+
+
+
+
+
+
+</script>

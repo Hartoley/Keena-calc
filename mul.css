@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    font-weight: 700;
+    justify-content: space-between;
+    /* gap: 3rem; */
+    /* background-color: aqua; */
+}
+
+.column{
+    color: rgb(120, 14, 49);
+    background-color: rgb(202, 152, 174);
+    width: 25%;
+    gap: 0.5rem;
+}
+
+/* found.forEach(function(element,index){
+    for (let index = element; index =>2; index++) {
+       console.log(yes)
+       
+    }
+   
+     
+     
+  }) */

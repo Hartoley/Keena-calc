@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input id="vowel" type="text">
+   <button onclick="vowelletters()">vowels</button>
+   <p id="vow"></p>
+   <button onclick="extractUniq()">Extract</button>
+    <p id="unique"></p>
+</body>
+</html>
+<script>
+ 
+    let vowelbox=document.getElementById('vowel')
+    let box=document.getElementById('box')
+    let vow=document.getElementById('vow')
+    let vowels=['a','e','i','o','u']
+    let newA=[]
+    let uniqueN=[2,2,3,4,5,55,2,7,7,8]
+    let save=[]
+    let unique=document.getElementById('unique')
+
+
+
+
+    function extractUniq(){
+      uniqueN.forEach(function(element){
+        // if (!save.includes(element)) {
+        //     save.push(element)
+        //     console.log(save)
+        
+        // }
+        if (uniqueN.indexOf(element)>=0 && uniqueN.lastIndexOf(element)==uniqueN.indexOf(element)) {
+            save.push(element)
+            console.log(save)
+    }
+
+
+
+      });
+      unique.innerHTML=`<h1>${save}<\h1>`
+    }
+ 
+    
+
+    function vowelletters(){
+        let found= vowelbox.value.split('')
+        newA=[]
+        found.forEach(function(element){
+           
+        if (vowels.includes(element)) {
+            newA.push(element)
+            vow.innerHTML= `One vowel found '${newA}'`
+
+        if (newA.length > 1) {
+            console.log(newA)
+            vow.innerHTML= `The ${newA.length} vowels found are ${newA}`
+        }
+        }
+       
+       
+    }
+    )
+      
+    }
+
+    
+
+
+</script>

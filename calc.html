@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div id="main1">
+        <div id="main">
+            <header>
+                <div id="icons">
+                    <img src="icons8-calculator-48.png" alt="" id="icon">
+                    <p>Calculator</p>
+                </div>
+                <div id="max">
+                    <img src="icons8-minimize-50.png" alt="" id="mini">
+                    <img src="icons8-maximize-button-20.png" alt="" id="maxi">
+                    <img src="icons8-cancel-20.png" alt="">
+                    <script src="https://kit.fontawesome.com/45f5c6c551.js" crossorigin="anonymous"></script>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+                </div>
+            </header>
+            <div id="menu">
+                <div id="menus">
+                    <img src="icons8-menu-20.png" alt="" id="menuicon">
+                    <p id="menup">Standard</p>
+                    <img src="icons8-maximize-20.png" alt="" id="maxxi">
+                </div>
+                <div id="menut">
+                    <img src="icons8-history-15.png" alt="">
+                </div>
+            </div>
+            <div id="numbers">
+                <input type="text" id="input1">
+                <input type="text" id="input2" >
+            </div>
+            <div id="mmcontents">
+                <div id="mmco">MC</div>
+                <div id="mmco">MR</div>
+                <div id="mmco1">M <span class="material-symbols-outlined" id="minus">
+                    add
+                    </span></div>
+                <div id="mmco1">M <span class="material-symbols-outlined" id="minus">
+                    remove
+                    </span></div>
+                <div id="mmco1">MS</div>
+                <div id="mmco">M<span class="material-symbols-outlined" id="down">
+                    expand_more
+                    </span></div>
+                
+            </div>
+            <div id="buttons">
+                <button onclick="button('%')">%</button>
+                <button onclick="clear1()">CE</button>
+                <button onclick="clear2()">C</button>
+                <button onclick="deleteit()"><i class="fa-solid fa-delete-left"></i></button>
+                <button onclick="button()">1/x</button>
+                <button onclick="button('2')">x <sup>2</sup></i></button>
+                <button onclick="minus('-')"><sup>2</sup>&#8730x</button>
+                <button onclick="signs('/')"><i class="fa-solid fa-divide"></i></button>
+                <button onclick="button(7)">7</button>
+                <button onclick="button(8)">8</button>
+                <button onclick="button(9)">9</button>
+                <button onclick="signs('x')"><i class="fa-solid fa-xmark"></i></button>
+                <button onclick="button(4)">4</button>
+                <button onclick="button(5)">5</button>
+                <button onclick="button(6)">6</button>
+                <button onclick="signs('-')"><i class="fa-solid fa-minus"></i></button>
+                <button onclick="button(1)">1</button>
+                <button onclick="button(2)">2</button>
+                <button onclick="button(3)">3</button>
+                <button onclick="signs('+')"><i class="fa-solid fa-plus"></i></button>
+                <button onclick="button('+')">+/-</button>
+                <button onclick="button(0)">0</button>
+                <button onclick="button('.')">.</button>
+                <button style="background-color: aqua; color: black;" onclick="equals()">
+                    <i class="fa-solid fa-equals"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+        let bginput=document.getElementById('input2')
+        let inputsm=document.getElementById('input1')
+        let shouldclear=false
+        let first_value,operator=''
+    
+    
+  
+
+    function button(number) {
+        if(shouldclear==true){
+            bginput.value=''
+            shouldclear=false
+        }
+       
+        bginput.value+=(number)
+
+       }
+
+
+       function signs(dots) {
+        if(operator){
+            equals()
+       }
+        inputsm.value= bginput.value + dots
+        shouldclear=true
+        operator=dots
+        first_value=bginput.value 
+      
+       }
+       
+
+       function equals(){
+        inputsm.value=first_value+operator+bginput.value
+
+        if (operator=='-'){
+            bginput.value=first_value-bginput.value
+            
+        }
+
+        if (operator=='+') {
+            bginput.value=Number(first_value)+ Number(bginput.value)
+        }
+
+        if (operator=='/') {
+            bginput.value=Number(first_value)/ Number(bginput.value)
+        }
+
+        if (operator=='x') {
+            bginput.value=Number(first_value)* Number(bginput.value)
+        }
+
+        if (operator=='x') {
+            bginput.value=Number(first_value)* Number(first_value)
+        }
+
+       
+       }
+
+       function deleteit(){
+        let deleteit =bginput.value
+        bginput.value = deleteit.slice(0, -1);
+    }
+
+
+      
+
+      
+       
+       function cancel(dots){
+        document.getElementById('input2').value=''
+       }
+
+
+       function clear1(dots){
+        document.getElementById('input2').value=''
+       }
+
+       function clear2(dots){
+        document.getElementById('input2').value=''
+        document.getElementById('input1').value=''
+       }
+
+
+</script>

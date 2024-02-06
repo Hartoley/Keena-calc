@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mul.css">
+</head>
+<body>
+    <input id="table" type="number">
+    <input id="table1" type="number">
+   
+    <!-- <input id="limit" type="number"> -->
+    <h1 id="table2"></h1>
+    
+
+
+    <button onclick="multiply()" >Table</button>
+    <div id="table3" class="row"></div>
+    
+    
+</body>
+</html>
+
+<script>
+    let table1=document.getElementById('table1')
+     let table=document.getElementById('table')
+     let table2=document.getElementById('table2')
+     let table3=document.getElementById('table3')
+     let limit=document.getElementById('limit')
+     let newDiv=document.createElement('div')
+
+     let start=1
+
+     let end =20
+
+
+
+     function multiply(){
+    
+        calculate()
+    }
+
+
+    function calculate(){
+
+        for (let index = table.value; index <= table1.value; index++) {
+            let row= '<div class="column">'
+                for (let inde = 1; inde <= 12; inde++) {
+
+                row+=`<p> ${index} x ${inde} = ${index * inde} <\p> `
+                }
+            row+='</div>'
+            table3.innerHTML+=row
+        
+
+    
+          
+        }
+    }
+
+</script>

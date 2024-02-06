@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="multiply.css">
+</head>
+<body>
+    <input id="table" type="number">
+    <input id="table1" type="number">
+    <button onclick="multiply()" >Table</button>
+    <!-- <input id="limit" type="number"> -->
+    <h1 id="table2"></h1>
+    <div id="table3" class="row">
+        <h1 id="h1"></h1>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+    let table1=document.getElementById('table1')
+     let table=document.getElementById('table')
+     let table2=document.getElementById('table2')
+     let table3=document.getElementById('table3')
+     let limit=document.getElementById('limit')
+     let newDiv=document.createElement('div')
+     let show3
+
+
+
+     function multiply(){
+    
+        calculate()
+    }
+
+
+    function calculate(){
+        let show2=document.createElement('div')
+        table3.appendChild(show2)
+        table3.style="display:flex; flex-direction:row; gap:2rem;"
+        let show4=document.createElement('p')
+        show4.innerHTML=`multiplication table ${index}`
+        show4.style="font-size:15px;"
+        show2.append(show4)
+        for (let index = table.value; index <= table1.value; index++) {
+
+           
+                for (let inde = 1; inde <= 12; inde++) {
+                    let showe= show.cloneNode(true)
+                    showe.innerHTML+=` ${index} x ${inde} = ${index * inde} <br>` 
+                    show2.append(showe)
+          
+           
+        }
+
+    
+          
+        }
+    }
+
+</script>
